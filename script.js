@@ -6,18 +6,22 @@ var span = document.getElementsByClassName("close-button")[0];
 
 // Quando o usuário clica no botão, abre o modal
 btn.onclick = function() {
-    modal.style.display = "flex";
+    //modal.style.display = "flex";
+    modal.style.width = '100%'
 }
 
 // Quando o usuário clica em <span> (x), fecha o modal
 span.onclick = function() {
-    modal.style.display = "none";
+    //modal.style.display = "none";
+    modal.style.width = '0'
+
 }
 
 // Quando o usuário clica fora do modal, ele também fecha
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        //modal.style.display = "none";
+        modal.style.width = '0'
     }
 }
 
