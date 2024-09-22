@@ -46,7 +46,7 @@ function saveTask() {
     const title = document.getElementById("task-name").value;
     const description = document.getElementById("task-desc").value;
     
-    if (currentId) {
+    if (currentId != null) {
         updateTask(currentId)
     } else {
         taskList.push({
