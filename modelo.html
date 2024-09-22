@@ -6,7 +6,7 @@
     <title>To-Do-List</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+<body onload="renderTaskList()">
     <header>
         <h1><img class="header-logo" id="logo" alt="to-do-list" src="logo.png"></h1>
     </header>
@@ -15,23 +15,24 @@
             <p id="p1">Você ainda não criou nenhuma tarefa</p>
             <p id="p2">Não se preocupe, suas novas tarefas irão aparecer aqui.</p>
         </div>
+    <div id="task-list" class="main">
+    </div>
         <div id="add-task-div" class="main">
-            <button id="add-task-button" onclick="teste()">+ Adicionar tarefa  </button>
+            <button id="add-task-button" onclick="openTaskForm()">+ Adicionar tarefa  </button>
         </div>
-        <!-- Modal para o form de inserção dos dados da task-->
         <div id="task-modal" class="modal">
             <div class="modal-content">
                 <form id="task-form">
-                    <span class="close-button">×</span>
+                    <span class="close-button" onclick="closeTaskForm()">×</span>
                     <p id="p3">Salvar</p>
-                    <p id="p4">Fazer o merge da tarefa</p>
+                    <p id="p4">Task</p>
                     <label for="task-name">Nome</label>
                     <input type="text" id="task-name" name="task-name" placeholder="Nome da tarefa" required>
                     <label for="task-desc">Descrição (Opcional)</label>
                     <textarea id="task-desc" name="task-desc" placeholder="Descreva a tarefa..."></textarea>
                     <div class="buttons-form">
-                        <button type="button" class="close-button-form">Fechar</button>
-                        <button type="submit" class="submit-button">Salvar tarefa</button>
+                        <button type="button" id="close-button-form" class="close-button-form" onclick="closeTaskForm()">Fechar</button>
+                        <button type="submit" id="submit-button" class="submit-button" onclick="saveTask()">Salvar tarefa</button>
                     </div>
                 </form>
             </div>

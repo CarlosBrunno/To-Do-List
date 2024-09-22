@@ -64,6 +64,96 @@ div.main{
 
 }
 
+#task-modal{
+    width: 0;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(43, 45, 49, 1);
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(60, 64, 67, 1);
+    gap: 1rem;
+}
+.task-text {
+    width: 100%;
+    text-align: left;
+}
+
+.task-item:hover {
+    background: rgba(53, 55, 60, 1);
+    transition: 0.3s;
+}
+
+.task-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: 2px solid rgba(152, 152, 152, 1);
+    border-radius: 0px;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.task-item input[type="checkbox"]:checked {
+    border-color: rgba(71, 114, 250, 1);
+    background-color: rgba(71, 114, 250, 1); 
+    color: white;
+    position: relative;
+  }
+  
+.task-item input[type="checkbox"]:checked::after {
+    content: "✔";
+    position: absolute;
+    left: 4px;
+    bottom: 0rem;
+    color: white;
+    font-size: 16px;
+  }
+
+input[type="checkbox"]:checked ~ .task-text .task-title,
+input[type="checkbox"]:checked ~ .task-text .task-desc {
+        text-decoration: line-through;
+    }
+
+.task-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.05px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.task-desc {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    color: rgba(189, 189, 189, 1);
+}
+
+.edit-task, .delete-task {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
 #add-task-button{
     width: 613px;
     height: 79px;
